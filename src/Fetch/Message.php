@@ -531,11 +531,11 @@ class Message
                         }
                     }
 
-                    $messageBody = @mb_convert_encoding($messageBody, self::$charset, $parameters['charset']);
+                    $messageBody = @mb_convert_encoding($messageBody, self::$charset, strtoupper($parameters['charset']));
                     $mb_converted = true;
                 }
                 if (!$mb_converted) {
-                    $messageBodyConv = @iconv($parameters['charset'], self::$charset . self::$charsetFlag, $messageBody);
+                    $messageBodyConv = @iconv(strtoupper($parameters['charset']), self::$charset . self::$charsetFlag, $messageBody);
 
                     if ($messageBodyConv !== false) {
                         $messageBody = $messageBodyConv;
