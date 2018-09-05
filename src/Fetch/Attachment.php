@@ -98,7 +98,11 @@ class Attachment
             $this->setFileName($parameters['name']);
         }
 
-        $this->size = $structure->bytes;
+        if (isset($structure->bytes) && !empty($structure->bytes)) {
+            $this->size = $structure->bytes;
+        } else {
+            $this->size = 0;
+        }
 
         $this->mimeType = Message::typeIdToString($structure->type);
 
