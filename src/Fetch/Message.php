@@ -228,33 +228,39 @@ class Message
     {
 
         /* First load the message overview information */
-
-        if(!is_object($messageOverview = $this->getOverview()))
-
+        if(!is_object($messageOverview = $this->getOverview())) {
             return false;
-
-        $this->subject = MIME::decode($messageOverview->subject, self::$charset);
+        }
+        
+        if (isset($messageOverview->subject)) {
+            $this->subject = MIME::decode($messageOverview->subject, self::$charset);
+        }
+        
         $this->date    = strtotime($messageOverview->date);
         $this->size    = $messageOverview->size;
 
-        foreach (self::$flagTypes as $flag)
+        foreach (self::$flagTypes as $flag) {
             $this->status[$flag] = ($messageOverview->$flag == 1);
+        }
 
         /* Next load in all of the header information */
-
         $headers = $this->getHeaders();
 
-        if (isset($headers->to))
+        if (isset($headers->to)) {
             $this->to = $this->processAddressObject($headers->to);
+        }
 
-        if (isset($headers->cc))
+        if (isset($headers->cc)) {
             $this->cc = $this->processAddressObject($headers->cc);
+        }
 
-        if (isset($headers->bcc))
+        if (isset($headers->bcc)) {
             $this->bcc = $this->processAddressObject($headers->bcc);
+        }
 
-        if (isset($headers->sender))
+        if (isset($headers->sender)) {
             $this->sender = $this->processAddressObject($headers->sender);
+        }
 
         $this->from    = isset($headers->from) ? $this->processAddressObject($headers->from) : array('');
         $this->replyTo = isset($headers->reply_to) ? $this->processAddressObject($headers->reply_to) : $this->from;
