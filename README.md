@@ -1,13 +1,12 @@
-# Fetch [![Build Status](https://travis-ci.org/tedious/Fetch.svg?branch=master)](https://travis-ci.org/tedious/Fetch)
-
-[![License](http://img.shields.io/packagist/l/tedivm/fetch.svg)](https://github.com/tedious/fetch/blob/master/LICENSE)
-[![Latest Stable Version](http://img.shields.io/github/release/tedious/fetch.svg)](https://packagist.org/packages/tedivm/fetch)
-[![Coverage Status](http://img.shields.io/coveralls/tedious/Fetch.svg)](https://coveralls.io/r/tedious/Fetch?branch=master)
-[![Total Downloads](http://img.shields.io/packagist/dt/tedivm/fetch.svg)](https://packagist.org/packages/tedivm/fetch)
+# Fetch
 
 Fetch is a library for reading email and attachments, primarily using the POP 
 and IMAP protocols.
 
+
+## TODO
+
+- [ ] Remove Vagrant and replace with Docker for running tests locally
 
 ## Installing
 
@@ -31,17 +30,8 @@ backwards compatible.
 
 ```
 "require": {
-  "tedivm/fetch": "0.7.*"
+  "nurtext/fetch": "0.8.*"
 }
-```
-
-### Pear
-
-Fetch is also available through Pear.
-
-```
-$ pear channel-discover pear.tedivm.com
-$ pear install tedivm/Fetch
 ```
 
 ### Github
@@ -75,4 +65,4 @@ foreach ($messages as $message) {
 
 Fetch is licensed under the BSD License. See the LICENSE file for details.
 
-[:releases:]: https://github.com/tedious/Fetch/releases
+[:releases:]: https://github.com/nurtext/Fetch/releases
