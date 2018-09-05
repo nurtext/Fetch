@@ -1,8 +1,32 @@
-.vagrant
+# OS stuff for Linux/macOS/Windows
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+.Spotlight-V100
+.Trashes
+.AppleDB
+.AppleDesktop
+.apdisk
+.afpDeleted*
+Network Trash Folder
+Temporary Items
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# IDEs and editors
 /.idea
-/.settings
-/.buildpath
-/.project
+.gradle
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
+
+# Project specific
 /composer.lock
 /vendor
 /report
